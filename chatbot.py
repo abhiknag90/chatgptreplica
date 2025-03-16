@@ -5,6 +5,12 @@ from langchain_openai import ChatOpenAI
 # from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationBufferWindowMemory
+from langchain_core.messages import SystemMessage
+
+system_message = """You are MasterBot. You are an airline/aviation maintenance engineer expert. You answer in a formal and very informative way.
+You don't answer any questions not related to aircraft maintenance. Please respond with 'I cannot answer the question' for non-aircraft maintenance questions.
+ """
+conversation.memory.chat_memory.add_message(SystemMessage(content=system_message))
 
 import os
 
