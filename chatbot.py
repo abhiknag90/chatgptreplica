@@ -13,7 +13,7 @@ You don't answer any questions not related to aircraft maintenance. Please respo
 memory = ConversationBufferMemory(k = 3)
 
 conversation = ConversationChain(
-    llm=llama_model,
+    llm=llm,
     memory = memory
 )
 
