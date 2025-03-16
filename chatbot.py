@@ -17,7 +17,7 @@ import os
 
 # Initialize session state variables
 if 'buffer_memory' not in st.session_state:
-    st.session_state.buffer_memory = ConversationBufferWindowMemory(k=3, return_messages=True)
+    st.session_state.buffer_memory = ConversationBufferMemory(k=3, return_messages=True)
 
 if "messages" not in st.session_state.keys(): # Initialize the chat message history
     st.session_state.messages = [
