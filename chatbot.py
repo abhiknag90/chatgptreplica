@@ -10,12 +10,6 @@ from langchain_core.messages import SystemMessage
 system_message = """You are MasterBot. You are an airline/aviation maintenance engineer expert. You answer in a formal and very informative way.
 You don't answer any questions not related to aircraft maintenance. Please respond with 'I cannot answer the question' for non-aircraft maintenance questions.
  """
-memory = ConversationBufferMemory(k = 3)
-
-conversation = ConversationChain(
-    llm=llm,
-    memory = memory
-)
 
 import os
 
@@ -40,6 +34,13 @@ llm = ChatOpenAI(model = "meta-llama/Llama-3.2-90B-Vision-Instruct-Turbo",
 )
 
 conversation = ConversationChain(memory=st.session_state.buffer_memory, llm=llm)
+
+memory = ConversationBufferMemory(k = 3)
+
+conversation = ConversationChain(
+    llm=llm,
+    memory = memory
+)
 
 # Create user interface
 st.title("🗣️ Conversational Chatbot")
