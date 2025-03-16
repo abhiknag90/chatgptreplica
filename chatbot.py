@@ -4,7 +4,7 @@ from streamlit_chat import message
 from langchain_openai import ChatOpenAI
 # from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains import ConversationChain
-from langchain.chains.conversation.memory import ConversationBufferWindowMemory
+from langchain.memory import ConversationBufferMemory
 from langchain_core.messages import SystemMessage
 
 system_message = """You are MasterBot. You are an airline/aviation maintenance engineer expert. You answer in a formal and very informative way.
