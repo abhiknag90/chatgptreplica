@@ -42,6 +42,8 @@ conversation = ConversationChain(
     memory = memory
 )
 
+conversation.memory.chat_memory.add_message(SystemMessage(content=system_message))
+
 # Create user interface
 st.title("🗣️ Conversational Chatbot")
 st.subheader("㈻ Your personal chatbot")
